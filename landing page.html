@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WizardZ - Digital Marketing Agency</title>
+    <style>
+      /* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    sans-serif;
+  background-color: #e8e8e8;
+  color: #000;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #f5f5f5;
+  padding: 20px 0;
+  border-radius: 40px 40px 0 0;
+  margin: 20px auto 0;
+  max-width: 1240px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.logo-icon {
+  font-size: 24px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #b4ff39;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #fff;
+  border: 2px solid #000;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #b4ff39;
+  border-color: #b4ff39;
+}
+
+.btn-dark {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 18px 32px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-dark:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+  background-color: #f5f5f5;
+  padding: 60px 0;
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 550px;
+}
+
+.hero-text h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  color: #333;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Company Logos */
+.companies {
+  background-color: #f5f5f5;
+  padding: 40px 0 60px;
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.company-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.company-logos img {
+  height: 40px;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.company-logos img:hover {
+  opacity: 1;
+}
+
+/* Services Section */
+.services {
+  background-color: #f5f5f5;
+  padding: 60px 0;
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.section-header {
+  margin-bottom: 50px;
+}
+
+.highlight-title {
+  display: inline-block;
+  background-color: #b4ff39;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 17px;
+  max-width: 600px;
+  color: #333;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  border-radius: 30px;
+  padding: 40px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card.light {
+  background-color: #fff;
+  border: 2px solid #e8e8e8;
+}
+
+.service-card.dark {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.highlight-tag {
+  display: inline-block;
+  background-color: #b4ff39;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.dark-tag {
+  display: inline-block;
+  background-color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.learn-more {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: gap 0.3s;
+}
+
+.learn-more.light {
+  color: #fff;
+}
+
+.learn-more:hover {
+  gap: 18px;
+}
+
+.icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  color: #b4ff39;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.icon-circle.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.card-illustration {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.8;
+}
+
+.card-illustration img {
+  width: 140px;
+  height: auto;
+}
+
+/* CTA Section */
+.cta-section {
+  background-color: #f5f5f5;
+  padding: 60px 0;
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.cta-content {
+  background-color: #efefef;
+  border-radius: 30px;
+  padding: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.cta-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.cta-text h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.cta-text p {
+  font-size: 17px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.cta-illustration {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-illustration img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Case Study Section */
+.case-study {
+  background-color: #f5f5f5;
+  padding: 60px 0;
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.case-grid {
+  background-color: #1a1a1a;
+  border-radius: 30px;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.case-card {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 0;
+  border-left: 3px solid #b4ff39;
+  padding-left: 25px;
+}
+
+.case-card p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.case-link {
+  color: #b4ff39;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.case-link:hover {
+  color: #d4ff79;
+}
+
+/* Footer */
+footer {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1240px;
+  border-radius: 0 0 40px 40px;
+}
+
+footer p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 42px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .cta-text h2 {
+    font-size: 32px;
+  }
+
+  .company-logos {
+    justify-content: center;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-icon">✦</span>
+                    <span class="logo-text">WizardZ</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#cases">Use Cases</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+                <button class="btn-primary">Request a quote</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Navigating the digital landscape for success</h1>
+                    <p>Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.</p>
+                    <button class="btn-dark">Book a consultation</button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://th.bing.com/th/id/OIP.aOUFNmqYqU9vYr2mWKZi2wHaFB?w=284&h=192&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Logos Section -->
+    <section class="companies">
+        <div class="container">
+            <div class="company-logos">
+                <img src="https://placehold.co/120x40?text=Amazon" alt="Amazon logo in black  background">
+                <img src="https://placehold.co/120x40?text=Dribbble" alt="Dribbble logo in black script font">
+                <img src="https://placehold.co/120x40?text=HubSpot" alt="HubSpot logo in black bold font">
+                <img src="https://placehold.co/120x40?text=Notion" alt="Notion logo in black with icon">
+                <img src="https://placehold.co/120x40?text=NETFLIX" alt="Netflix logo in bold black uppercase letters">
+                <img src="https://placehold.co/120x40?text=Zoom" alt="Zoom logo in black modern font">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="highlight-title">Services</h2>
+                <p class="section-description">At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card light">
+                    <div class="card-content">
+                        <h3 class="highlight-tag">Search engine optimization</h3>
+                        <a href="#" class="learn-more">
+                            <span class="icon-circle">→</span>
+                            <span>Learn more</span>
+                        </a>
+                    </div>
+                    <div class="card-illustration">
+                        <img src="data:image/webp;base64,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" alt="SEO illustration with search engine elements magnifying glass and graph lines">
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card dark">
+                    <div class="card-content">
+                        <h3 class="dark-tag">Pay per click advertising</h3>
+                        <a href="#" class="learn-more light">
+                            <span class="icon-circle light">→</span>
+                            <span>Learn more</span>
+                        </a>
+                    </div>
+                    <div class="card-illustration">
+                        <img src="data:image/webp;base64,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" alt="PPC advertising illustration with cursor click and ad window">
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card dark">
+                    <div class="card-content">
+                        <h3 class="dark-tag">Social media marketing</h3>
+                        <a href="#" class="learn-more light">
+                            <span class="icon-circle light">→</span>
+                            <span>Learn more</span>
+                        </a>
+                    </div>
+                    <div class="card-illustration">
+                        <img src="https://th.bing.com/th/id/OIP.jxEizzuNP6W02EpmbDmSKgHaEh?w=230&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1" alt="Social media marketing illustration with mobile device and social icons">
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card light">
+                    <div class="card-content">
+                        <h3 class="highlight-tag">E-mail marketing</h3>
+                        <a href="#" class="learn-more">
+                            <span class="icon-circle">→</span>
+                            <span>Learn more</span>
+                        </a>
+                    </div>
+                    <div class="card-illustration">
+                        <img src="https://th.bing.com/th/id/OIP.N74Nrt6mRCR_MBeBXHFAyQHaFI?w=270&h=187&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1" alt="Email marketing illustration with envelope and message elements">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Let's make things happen</h2>
+                    <p>Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.</p>
+                    <button class="btn-dark">Get your free proposal</button>
+                </div>
+                <div class="cta-illustration">
+                    <img src="https://th.bing.com/th/id/OIP.uAPpUuErZfMrQ4MGS-W7LQHaH_?w=149&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1" alt="Happy smiley character with arrow and dynamic elements in lime green">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="case-study" id="cases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="highlight-title">Case study</h2>
+                <p class="section-description">Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies</p>
+            </div>
+
+            <div class="case-grid">
+                <div class="case-card">
+                    <p>For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.</p>
+                    <a href="#" class="case-link">Learn more →</a>
+                </div>
+
+                <div class="case-card">
+                    <p>For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.</p>
+                    <a href="#" class="case-link">Learn more →</a>
+                </div>
+
+                <div class="case-card">
+                    <p>For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.</p>
+                    <a href="#" class="case-link">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 WizardZ. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
